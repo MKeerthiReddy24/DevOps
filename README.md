@@ -5,7 +5,6 @@ All AWS credentials are securely stored using Ansible Vault.
 
 ## Setup EC2 Collection and Authentication
 ### Install boto3
-``` bash
-ansible-galaxy collection install amazon.aws
+```ansible-galaxy collection install amazon.aws
 
 
