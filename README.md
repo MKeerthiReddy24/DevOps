@@ -31,8 +31,8 @@ ansible-playbook ec2_create.yml --vault-password-file vault.pass
 ssh-copy-id -f "-o  IdentityFile <key-pair-path>" ubuntu@<public-ipaddress>
 ```
 
-###### If you want to check instances  details about the managed node (the target machine) then you can use ansible_facts module
-###### Execute the inventory.ini which contains the hosts details i.e servers hosts here.
+##### If you want to check instances  details about the managed node (the target machine) then you can use ansible_facts module
+##### Create the inventory.ini which contains the hosts details i.e servers hosts here.
 ### Execute the ec2 stop instances yml file to stop the instances
 ```bash
 ansible -i inventory.ini ec2_stop.yml --vault-password-file vault.pass
