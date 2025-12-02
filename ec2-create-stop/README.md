@@ -60,5 +60,12 @@ ssh-copy-id -f "-o  IdentityFile <key-pair-path>" ubuntu@<public-ipaddress>
 ansible -i inventory.ini ec2_stop.yml --vault-password-file vault.pass
 ```
 
+## Note: 
+Make sure to not keep the secrets or passwords in github, you can keep in .gitignore to untrack the files .
+To keep it untracked and move to .gitignore run the below 
+```bash
+echo "vault.pass" >> .gitignore
+```
+
 
 
