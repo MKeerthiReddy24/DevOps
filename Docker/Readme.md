@@ -1,4 +1,4 @@
-🚀 Day-1: Dockerize the Node.js Starter Project
+# **🚀 Day-1: Dockerize the Node.js Starter Project
 
 This guide walks you through cloning a Node.js starter project, creating a Docker image, pushing it to Docker Hub, and running it in any environment.
 1. Clone the Git hub Repository in the server
