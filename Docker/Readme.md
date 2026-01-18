@@ -95,20 +95,20 @@ docker exec -it containerid sh
 
 #### Working of Docker file
 
-FROM node:18-alpine : This is the base image where it contains all nodejs installed  and  yarn, npm available. alpine is a small OS.
-WORKDIR /app : Docker creates a folder /app inside the container. All future commands (COPY, RUN, CMD) run inside this folder automatically.
-COPY package.json yarn.lock ./ : only copy the package.json and yarn.lock files into the working directory i.e /app. This represents node dependencies.
-RUN yarn install --production : Inside the container, Docker runs
+- FROM node:18-alpine : This is the base image where it contains all nodejs installed  and  yarn, npm available. alpine is a small OS.
+- WORKDIR /app : Docker creates a folder /app inside the container. All future commands (COPY, RUN, CMD) run inside this folder automatically.
+- COPY package.json yarn.lock ./ : only copy the package.json and yarn.lock files into the working directory i.e /app. This represents node dependencies.
+- RUN yarn install --production : Inside the container, Docker runs
 ``` bash
 yarn install --production
 ```
-Yarn creates a node_modules folder inside the container.
-Only "dependencies" (not devDependencies) are installed.
-This creates a new image layer.
+-- Yarn creates a node_modules folder inside the container.
+-- Only "dependencies" (not devDependencies) are installed.
+-- This creates a new image layer.
 
-COPY . . : Copies all files in your project folder into /app.
-EXPOSE 3000 : Documents that your container uses port 3000. It does NOT publish the port.
-CMD ["node", "index.js"] : This defines the default command that runs when the container starts.
+- COPY . . : Copies all files in your project folder into /app.
+- EXPOSE 3000 : Documents that your container uses port 3000. It does NOT publish the port.
+- CMD ["node", "index.js"] : This defines the default command that runs when the container starts.
 Docker runs:
 ``` bash
 node index.js
