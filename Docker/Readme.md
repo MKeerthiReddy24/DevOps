@@ -93,7 +93,7 @@ docker exec -it containerid sh
 ```
 
 
-#### Working of Docker file
+### Working of Docker file
 
 - FROM node:18-alpine : This is the base image where it contains all nodejs installed  and  yarn, npm available. alpine is a small OS.
 - WORKDIR /app : Docker creates a folder /app inside the container. All future commands (COPY, RUN, CMD) run inside this folder automatically.
@@ -113,7 +113,7 @@ Docker runs:
 ``` bash
 node index.js
 ```
-#### 🚀 What happens when you run the container?
+### 🚀 What happens when you run the container?
 ##### When you run:
 ``` bash
 docker run -dp 3000:3000 first-image-node
