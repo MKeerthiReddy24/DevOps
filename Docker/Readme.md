@@ -1,13 +1,13 @@
 # Day-1 Dockerize the node starter project
-#####1. Clone the Git hub Repository in the server
+####.Clone the Git hub Repository in the server
 ``` bash
 git clone <github-url>
 ```
-#####2. cd into the directory
+#####.cd into the directory
 ``` bash
   cd <folder-name>
 ```
-#####3. Create a docker file
+####.Create a docker file
 ``` bash
 touch Dockerfile
 ```
