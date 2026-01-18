@@ -1,17 +1,17 @@
 # Day-1 Dockerize the node starter project
-####.Clone the Git hub Repository in the server
+1. Clone the Git hub Repository in the server
 ``` bash
 git clone <github-url>
 ```
-#####.cd into the directory
+2.cd into the directory
 ``` bash
   cd <folder-name>
 ```
-####.Create a docker file
+3. Create a docker file
 ``` bash
 touch Dockerfile
 ```
-#####4. Paste the below content into the docker file
+4. Paste the below content into the docker file
 ``` bash
 FROM node:18-alpine
 WORKDIR /app
@@ -21,7 +21,7 @@ COPY . .
 EXPOSE 3000
 CMD ["node", "index.js"]
 ```
-#####5. Samewise create package.json and index.js files
+5. Samewise create package.json and index.js files
 ###### index.js
 ``` bash
 const express = require("express");
