@@ -91,3 +91,46 @@ docker exec -it containername sh
 or
 docker exec -it containerid sh
 ```
+
+
+#### Working of Docker file
+
+FROM node:18-alpine : This is the base image where it contains all nodejs installed  and  yarn, npm available. alpine is a small OS.
+WORKDIR /app : Docker creates a folder /app inside the container. All future commands (COPY, RUN, CMD) run inside this folder automatically.
+COPY package.json yarn.lock ./ : only copy the package.json and yarn.lock files into the working directory i.e /app. This represents node dependencies.
+RUN yarn install --production : Inside the container, Docker runs
+``` bash
+yarn install --production
+```
+Yarn creates a node_modules folder inside the container.
+Only "dependencies" (not devDependencies) are installed.
+This creates a new image layer.
+
+COPY . . : Copies all files in your project folder into /app.
+EXPOSE 3000 : Documents that your container uses port 3000. It does NOT publish the port.
+CMD ["node", "index.js"] : This defines the default command that runs when the container starts.
+Docker runs:
+``` bash
+node index.js
+```
+#### 🚀 What happens when you run the container?
+##### When you run:
+``` bash
+docker run -dp 3000:3000 first-image-node
+```
+Docker does:
+##### Step 1: Start the container
+Loads the built image and creates a new container from it.
+##### Step 2: Map ports
+Host 3000 → Container 3000
+##### Step 3: Execute CMD
+Runs:
+``` bash
+node index.js
+```
+##### Step 4: Node server starts
+Your Node Express app listens at:
+``` bash
+localhost:3000
+```
+##### If CMD exits → container stops.
