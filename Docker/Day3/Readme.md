@@ -1,6 +1,6 @@
 ## Kubernetes Architecture
 
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/c65d8edd-fde1-49ea-8bd3-5ea9692f30e7" />
+<img width="766" height="528" alt="image" src="https://github.com/user-attachments/assets/0623984f-803e-4cbe-a610-7c4fa4ca5e4b" />
 
 #### Components:
 ### Master/Control plane Node V/s Worker Node ( Node is nothing but a Virtual machine)
@@ -30,4 +30,5 @@ Pod to pod communication
 6. Kubelet creates the Pod (pulls images, starts containers) and then sends the Pod status back to the API Server.
 7. Once done → sends Pod status (Running/Failed/Pending) back to API Server.
 8. API Server stores the new Pod status in etcd.
+
 
