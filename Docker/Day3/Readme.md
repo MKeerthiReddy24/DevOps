@@ -1,6 +1,6 @@
 ## Kubernetes Architecture
 
-<img width="735" height="511" alt="image" src="https://github.com/user-attachments/assets/c846166c-5653-4f70-971d-eb5f1b87d457" />
+<img width="728" height="507" alt="image" src="https://github.com/user-attachments/assets/86aded6e-b607-4692-953a-7b328c9b0e59" />
 
 #### Components:
 ### Master/Control plane Node V/s Worker Node ( Node is nothing but a Virtual machine)
@@ -21,3 +21,11 @@ Node-level agent that helps container management and receives instructions from 
 ##### Kube proxy 
 Pod to pod communication
 
+#### Flow:
+1. User raises a request to create a Pod. It goes to API Server.
+2. Here API server interacts with Etcd to make a entry for the request.
+3. API Server sends request to Scheduler to decide a node for creating the pod.
+4. Scheduler decides and specifies the node.
+5. APi server instructs the kubelet in the worker node to create the pod.
+6. kubelet send to API server that pod has been created.
+7. API server then tells to ETCD.
