@@ -3,15 +3,15 @@
 #### Creating a cluster:
 1. Create a cluster using kind
   ```bash
-  kind  create cluster —image <latest-kind-kuberntes-image> —name <cluster-name>
+  kind  create cluster --image <latest-kind-kuberntes-image> --name <cluster-name>
   ```
 3. Get the info of the cluster
    ```bash
-   kubectl cluster-info —context <cluster-name>
+   kubectl cluster-info —-context <cluster-name>
    ```
 5. Test to ensure you installed  is up-to-date
    ```bash
-   kubectl version —client
+   kubectl version —-client
    ```
 6. Get the nodes
   ```bash
@@ -32,7 +32,7 @@
    ```
 3. Create a new cluster with the file we have created
       ```bash
-      kind  create cluster —image <latest-kind-kuberntes-image> —name <cluster-name> —config config.yaml
+      kind  create cluster --image <latest-kind-kuberntes-image> —-name <cluster-name> —-config config.yaml
       ```
 4. To get the all clusters [ * - represents the current cluster]
        ```bash
@@ -42,5 +42,6 @@
        ```bash
        kubectl config use-context  <cluster-name>
        ```
+
 
 
