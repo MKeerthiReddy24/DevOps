@@ -26,11 +26,11 @@ spec:
      - containerPort: 80
 ```
 
-#### Create the YAML from the nginx pod existed created
+#### Create the YAML from the nginx pod existed created -- refer pod.yaml
 ```bash
 kubectl get pod <pod-name> -o yaml > pod.yaml
 ```
-##### To get the clean manifest file without any runtime information
+##### To get the clean manifest file without any runtime information  -- refer nginx.yaml
 ```bash
 kubectl run <pod-name> --image=nginx --dry-run=client -o yaml > <new-file-name.yaml>
 ```
@@ -53,6 +53,7 @@ kubectl describe <pod-name>
 ```bash
 kubectl get pods
 ```
+
 
 
 
