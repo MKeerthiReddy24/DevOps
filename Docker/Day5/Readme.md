@@ -34,6 +34,9 @@ kubectl get pod <pod-name> -o yaml > pod.yaml
 ```bash
 kubectl run <pod-name> --image=nginx --dry-run=client -o yaml > <new-file-name.yaml>
 ```
+##### In Kubernetes, dry run means:
+“Show me what would happen, but don’t actually create anything.”
+It validates the command and prints the output without applying it to the cluster.
 
 #### Use that YAML to create a new pod with the name nginx-new.
 Modify the pod name under metadata and then run below command
@@ -50,5 +53,6 @@ kubectl describe <pod-name>
 ```bash
 kubectl get pods
 ```
+
 
 
