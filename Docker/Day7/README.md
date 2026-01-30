@@ -30,10 +30,50 @@ spec:
 ```
 #### Nodeport
 Exposes service externally using <NodeIP>:<NodePort>.Port range: 30000–32767
+```bash
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodePort
+  labels:
+    env: demo
+spec:
+  type: NodePort
+  ports:
+  - nodePort: 30001
+    port: 80
+    targetport: 80
+  selector:
+    env: demo
+```
 #### LoadBalancer
 Exposes service externally using a cloud load balancer.
+``` bash
+apiVersion: v1
+kind: Service
+metadata:
+  name: lb-svc
+  labels:
+    env: demo
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    env: demo
+```
 #### ExternalName
 Maps a Kubernetes service to an external DNS name. No selector, no proxying. Redirecting to services outside the cluster
+```bash
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+  namespace: prod
+spec:
+  type: ExternalName
+  externalName: my.api.example.com
+```
 #### Headless Service
 Does not give a ClusterIP.Used when you need pod IPs directly.
 * Common in:
@@ -47,6 +87,7 @@ Does not give a ClusterIP.Used when you need pod IPs directly.
 | **LoadBalancer** | ✔️ Yes          | ✔️ Yes (Public LB) | Production apps        |
 | **ExternalName** | ❌ No (proxy)    | ✔️ DNS redirect    | External DB/API        |
 | **Headless**     | Direct Pod IPs  | Depends            | Stateful apps          |
+
 
 
 
