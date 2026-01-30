@@ -22,6 +22,7 @@ Exposes service externally using a cloud load balancer.
 Maps a Kubernetes service to an external DNS name. No selector, no proxying. Redirecting to services outside the cluster
 #### Headless Service
 Does not give a ClusterIP.Used when you need pod IPs directly.
-* Common in:
-- StatefulSets
-- Databases like Cassandra, Kafka
+** Common in:
+-- StatefulSets
+-- Databases like Cassandra, Kafka
+
