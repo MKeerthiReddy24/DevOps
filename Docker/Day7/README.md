@@ -14,6 +14,20 @@ Service gives a fixed endpoint to reach those Pods.
 
 #### ClusterIP
 Its used for internal access(microservices calling each other) i.e to expose the service inside the cluster.
+Sample yaml:
+```bash
+apiVersion: v1
+kind: Service
+metadata:
+    name: cluster-svc
+    labels:
+      env: demo
+spec:
+    ports:
+    - port: 80
+    selector:
+      env: demo
+```
 #### Nodeport
 Exposes service externally using <NodeIP>:<NodePort>.Port range: 30000–32767
 #### LoadBalancer
@@ -33,4 +47,5 @@ Does not give a ClusterIP.Used when you need pod IPs directly.
 | **LoadBalancer** | ✔️ Yes          | ✔️ Yes (Public LB) | Production apps        |
 | **ExternalName** | ❌ No (proxy)    | ✔️ DNS redirect    | External DB/API        |
 | **Headless**     | Direct Pod IPs  | Depends            | Stateful apps          |
+
 
