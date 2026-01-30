@@ -14,7 +14,7 @@ Service gives a fixed endpoint to reach those Pods.
 
 #### ClusterIP
 Its used for internal access(microservices calling each other) i.e to expose the service inside the cluster.
-Sample yaml:
+##### Sample yaml:
 ```bash
 apiVersion: v1
 kind: Service
@@ -47,5 +47,6 @@ Does not give a ClusterIP.Used when you need pod IPs directly.
 | **LoadBalancer** | ✔️ Yes          | ✔️ Yes (Public LB) | Production apps        |
 | **ExternalName** | ❌ No (proxy)    | ✔️ DNS redirect    | External DB/API        |
 | **Headless**     | Direct Pod IPs  | Depends            | Stateful apps          |
+
 
 
